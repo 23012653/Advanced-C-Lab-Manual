@@ -41,6 +41,7 @@ int main() {
 ```
 
 Output:
+
 ![image](https://github.com/user-attachments/assets/d90f8b5e-a95b-42a8-a1c2-07459f981979)
 
 
@@ -91,6 +92,7 @@ int main() {
 ```
 
 Output:
+
 ![Screenshot 2025-04-25 153435](https://github.com/user-attachments/assets/2b241a16-942f-48f6-8192-46d608b4388f)
 
 Result:
@@ -251,6 +253,7 @@ int main() {
 ```
 
 Output:
+
 ![Screenshot 2025-04-25 155639](https://github.com/user-attachments/assets/831636a0-c81e-4b40-ab17-b72b528d64a1)
 
 Result:
