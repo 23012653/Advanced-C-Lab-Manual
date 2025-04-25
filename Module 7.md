@@ -15,13 +15,33 @@ Else
 6.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct eligible {
+    int age;
+    char n[50];
+};
 
+int main() {
+    struct eligible e;
+    scanf("%s", e.n);
+    scanf("%d", &e.age);
+
+    if (e.age <= 6)
+        printf("Vaccine Eligibility: No\n");
+    else
+        printf("Vaccine Eligibility: Yes\n");
+
+    printf("Name: %s\nAge: %d\n", e.n, e.age);
+
+    return 0;
+}
+
+```
 
 Output:
-
-//paste your output here
+![image](https://github.com/user-attachments/assets/d90f8b5e-a95b-42a8-a1c2-07459f981979)
 
 
 Result:
@@ -43,19 +63,35 @@ Algorithm:
 7.	Return 0
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct numbers {
+    int a, b;
+};
 
+struct numbers add(struct numbers n) {
+    struct numbers result;
+    result.a = n.a + n.b;
+    return result;
+}
 
+int main() {
+    struct numbers n, sum;
 
+    printf("Enter two numbers: ");
+    scanf("%d %d", &n.a, &n.b);
+
+    sum = add(n);
+
+    printf("Sum: %d\n", sum.a);
+
+    return 0;
+}
+```
 
 Output:
-
-
-//paste your output here
-
-
-
+![Screenshot 2025-04-25 153435](https://github.com/user-attachments/assets/2b241a16-942f-48f6-8192-46d608b4388f)
 
 Result:
 Thus, the program is verified successfully
@@ -85,25 +121,34 @@ Use scanf to input the file name into the name array.
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    FILE *p;
+    char name[100];
 
+    printf("Enter the file name: ");
+    scanf("%s", name);
 
+    p = fopen(name, "w");
 
+    if (p == NULL) {
+        printf("Error creating file.\n");
+        return 1;
+    }
 
+    printf("File '%s' created successfully.\n", name);
+
+    fclose(p);
+    printf("File closed successfully.\n");
+
+    return 0;
+}
+```
 Output:
 
-
-//paste your output here
-
-
-
-
-
-
-
-
-
+![Screenshot 2025-04-25 154014](https://github.com/user-attachments/assets/a00e1c61-8f54-4439-9dae-3d992ed085cd)
 
 
 Result:
@@ -132,20 +177,11 @@ Use scanf to input the file name into the name array and the number of strings i
 5.	Return 0 to indicate successful program execution.
  
 Program:
+```
 
-//type your code here
-
-
-
+```
 
 Output:
-
-
-//paste your output here
-
-
-
-
 
 
 Result:
@@ -186,21 +222,36 @@ Algorithm:
 13.End the program by returning 0.
 
 Program:
+```
+#include <stdio.h>
+struct Student {
+    char name[50];
+    int roll;
+    float marks;
+};
 
-//type your code here
+int main() {
+    struct Student s;
+    printf("Enter student name: ");
+    fgets(s.name, sizeof(s.name), stdin);
 
+    printf("Enter roll number: ");
+    scanf("%d", &s.roll);
 
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+    printf("\n--- Student Details ---\n");
+    printf("Name       : %s", s.name);
+    printf("Roll No.   : %d\n", s.roll);
+    printf("Marks      : %.2f\n", s.marks);
 
+    return 0;
+}
+
+```
 
 Output:
-
-
-//paste your output here
-
-
-
-
-
+![Screenshot 2025-04-25 155639](https://github.com/user-attachments/assets/831636a0-c81e-4b40-ab17-b72b528d64a1)
 
 Result:
 Thus, the program is verified successfully
