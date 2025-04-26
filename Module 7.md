@@ -218,6 +218,8 @@ int main() {
 ```
 
 Output:
+
+
 ![Screenshot 2025-04-26 104506](https://github.com/user-attachments/assets/aeb39aa0-0107-41ca-ba4d-a3a86573d158)
 
 
