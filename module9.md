@@ -57,6 +57,7 @@ Thus, the program to display stack elements using an array is verified successfu
  
 
 EXP NO:12  PROGRAM TO PUSH THE GIVEN ELEMENT IN TO A STACK USING ARRAY.
+
 Aim:
 To create a C program to push the given element in to a stack using array.
 Algorithm:
@@ -104,6 +105,7 @@ Thus, the program to push the given element in to a stack using array is verifie
 
  
 EXP NO:13 C PROGRAM TO DISPLAY QUEUE ELEMENTS USING ARRAY.
+
 Aim:
 To write a C program to display queue elements using array
 
@@ -160,6 +162,7 @@ Thus, the program to display queue elements using array is verified successfully
 
  
 EXP NO:14 C PROGRAM TO INSERT ELEMENTS IN QUEUE USING ARRAY.
+
 Aim:
 To write a C program to insert elements in queue using array.
 
