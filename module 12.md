@@ -14,12 +14,58 @@ Algorithm:
 7.	Move to the next node using the next pointer.
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
 
-//type your code here
+struct Node {
+    int data;
+    struct Node* next;
+};
 
+struct Node* head = NULL;
+
+void push(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+        printf("Stack Overflow\n");
+        return;
+    }
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
+}
+
+void display() {
+    struct Node* p = head;
+    if (p == NULL) {
+        printf("Stack is empty.\n");
+        return;
+    }
+
+    printf("Stack elements are:\n");
+    while (p != NULL) {
+        printf("%d\n", p->data);
+        p = p->next;
+    }
+}
+
+int main() {
+    // Push some elements onto the stack
+    push(10);
+    push(20);
+    push(30);
+    push(40);
+
+    display();
+
+    return 0;
+}
+
+```
 Output:
 
-//paste your output here
+![Screenshot 2025-05-14 211201](https://github.com/user-attachments/assets/55a8b3e5-855a-4d43-bcd8-a967e9fdfc4a)
 
 
 Result:
@@ -39,13 +85,68 @@ Algorithm:
 4.	Set head to point to the next node in the stack.
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
 
-//type your code here
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* head = NULL;
+
+void push(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
+}
+
+void pop() {
+    if (head == NULL) {
+        printf("Stack is empty.\n");
+        return;
+    }
+    struct Node* temp = head;
+    printf("Popped element: %d\n", temp->data);
+    head = head->next;
+    free(temp);
+}
+
+void display() {
+    struct Node* p = head;
+    if (p == NULL) {
+        printf("Stack is empty.\n");
+        return;
+    }
+    printf("Stack elements are:\n");
+    while (p != NULL) {
+        printf("%d\n", p->data);
+        p = p->next;
+    }
+}
+
+int main() {
+    
+    push(10);
+    push(20);
+    push(30);
+    
+    display();
+
+    pop();
+
+    display();
+
+    return 0;
+}
+
+```
 
 Output:
 
-//paste your output here
-
+![Screenshot 2025-05-14 211457](https://github.com/user-attachments/assets/6aa592f9-dc84-4dcf-a6af-fdb7e382e417)
 
 
 Result:
@@ -63,12 +164,63 @@ Algorithm:
 5.	End the display function.
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
 
-//type your code here
+struct Node {
+    int data;
+    struct Node* next;
+};
 
+struct Node* front = NULL;
+struct Node* rear = NULL;
+
+void enqueue(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+    
+    if (rear == NULL) {
+        
+        front = rear = newNode;
+    } else {
+        rear->next = newNode;
+        rear = newNode;
+    }
+}
+
+void display() {
+    struct Node* temp = front;
+    if (front == NULL) {
+        printf("Queue is empty.\n");
+        return;
+    }
+
+    printf("Queue elements are:\n");
+    while (temp != NULL) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+}
+
+int main() {
+   
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+
+    display();
+
+    return 0;
+}
+
+
+```
 Output:
 
-//paste your output here
+![Screenshot 2025-05-14 212127](https://github.com/user-attachments/assets/40a328bb-4274-4266-9438-8dfd6dc8a601)
+
 
 Result:
 Thus, the program to display queue elements using linked list is verified successfully.
@@ -89,12 +241,65 @@ Algorithm:
 6.	End of Enqueue Operation
  
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
 
-//type your code here
+struct Node {
+    int data;
+    struct Node* next;
+};
+
+struct Node* front = NULL;
+struct Node* rear = NULL;
+
+void enqueue(int value) {
+    
+    struct Node* p = (struct Node*)malloc(sizeof(struct Node));
+    p->data = value;
+    p->next = NULL;
+
+    if (front == NULL && rear == NULL) {
+        
+        front = rear = p;
+    } else {
+     
+        rear->next = p;
+        rear = p;
+    }
+}
+
+void display() {
+    struct Node* temp = front;
+
+    if (temp == NULL) {
+        printf("Queue is empty.\n");
+        return;
+    }
+
+    printf("Queue elements are:\n");
+    while (temp != NULL) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+}
+
+int main() {
+    
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+
+    display();
+
+    return 0;
+}
+
+```
 
 Output:
+![Screenshot 2025-05-14 212127](https://github.com/user-attachments/assets/ee65b7c0-3046-4e35-8084-65992c265e34)
 
-//paste your output here
 
 Result:
 Thus, the program to insert elements in queue using linked list is verified successfully.
@@ -116,12 +321,69 @@ o	If the queue is empty (i.e., the front pointer is NULL), return an error or a 
 o	If the queue is not empty, return the data stored in the front node of the linked list (i.e., the element at the head of the queue).
 
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
 
-//type your code here
+struct Node {
+    int data;
+    struct Node* next;
+};
 
+struct Node* front = NULL;
+struct Node* rear = NULL;
+
+void enqueue(int value) {
+    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    newNode->data = value;
+    newNode->next = NULL;
+
+    if (rear == NULL) {
+        front = rear = newNode;
+    } else {
+        rear->next = newNode;
+        rear = newNode;
+    }
+}
+
+void peek() {
+    if (front == NULL) {
+        printf("Queue is empty.\n");
+    } else {
+        printf("Front element is: %d\n", front->data);
+    }
+}
+
+void display() {
+    struct Node* temp = front;
+    if (temp == NULL) {
+        printf("Queue is empty.\n");
+        return;
+    }
+
+    printf("Queue elements are:\n");
+    while (temp != NULL) {
+        printf("%d\n", temp->data);
+        temp = temp->next;
+    }
+}
+
+int main() {
+   
+    enqueue(100);
+    enqueue(200);
+    enqueue(300);
+
+    display();
+
+    peek();
+
+    return 0;
+}
+
+```
 Output:
-
-//paste your output here
+![Screenshot 2025-05-14 212337](https://github.com/user-attachments/assets/d3386b59-65aa-4fb8-992f-68cf43a293af)
 
 
 
