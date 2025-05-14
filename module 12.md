@@ -250,20 +250,14 @@ struct Node {
     struct Node* next;
 };
 
-struct Node* front = NULL;
-struct Node* rear = NULL;
+struct Node *front = NULL, *rear = NULL;
 
-void enqueue(int value) {
-    
-    struct Node* p = (struct Node*)malloc(sizeof(struct Node));
-    p->data = value;
-    p->next = NULL;
-
-    if (front == NULL && rear == NULL) {
-        
+void enqueue(int val) {
+    struct Node* p = malloc(sizeof(struct Node));
+    p->data = val; p->next = NULL;
+    if (rear == NULL)
         front = rear = p;
-    } else {
-     
+    else {
         rear->next = p;
         rear = p;
     }
@@ -271,34 +265,27 @@ void enqueue(int value) {
 
 void display() {
     struct Node* temp = front;
-
-    if (temp == NULL) {
-        printf("Queue is empty.\n");
-        return;
-    }
-
-    printf("Queue elements are:\n");
-    while (temp != NULL) {
-        printf("%d\n", temp->data);
+    while (temp) {
+        printf("%d -> ", temp->data);
         temp = temp->next;
     }
+    printf("NULL\n");
 }
 
 int main() {
-    
     enqueue(10);
     enqueue(20);
     enqueue(30);
-
     display();
-
     return 0;
 }
 
 ```
 
 Output:
-![Screenshot 2025-05-14 212127](https://github.com/user-attachments/assets/ee65b7c0-3046-4e35-8084-65992c265e34)
+
+![Screenshot 2025-05-14 215103](https://github.com/user-attachments/assets/1785b62e-613d-45a8-a3da-61b6adb2dfd8)
+
 
 
 Result:
@@ -383,6 +370,7 @@ int main() {
 
 ```
 Output:
+
 ![Screenshot 2025-05-14 212337](https://github.com/user-attachments/assets/d3386b59-65aa-4fb8-992f-68cf43a293af)
 
 
